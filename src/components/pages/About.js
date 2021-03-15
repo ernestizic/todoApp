@@ -1,6 +1,7 @@
 import React from 'react';
 
-function About() {
+const About = (props)=> {
+    console.log(props)
     return ( 
         <React.Fragment>
             <h1>About</h1>

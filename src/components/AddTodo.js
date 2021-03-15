@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 class AddTodo extends Component {
   state = {
-    title: "",
+    title: ""
   };
 
   onChange =(e)=> this.setState({ [e.target.name]: e.target.value });
@@ -19,7 +19,7 @@ class AddTodo extends Component {
     return (
       <form onSubmit={this.onSubmit} style={{ display: "flex" }}>
         <input
-          type="text"
+          type="text" 
           name="title"
           placeholder="Add Todo..."
           style={{ flex: "10", padding: "5px" }}

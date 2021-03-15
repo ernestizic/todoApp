@@ -18,7 +18,7 @@ class App extends Component {
         id: uuid(),
         title: 'Take out the trash',
         completed: false
-      },
+      },    
       {
         id: uuid(),
         title: 'Dinner with wifey',
@@ -38,11 +38,11 @@ class App extends Component {
   }
 
   componentDidMount() {
-    axios.get('https://jsonplaceholder.typicode.com/todos?_limit=10')
-      .then(res => this.setState({todos: res.data})) //res means response
+    axios.get('https://jsonplaceholder.typicode.com/todos') // ?_limit=10 can also be used to slice the number ot data
+      .then(res => this.setState({ todos: res.data.slice(0, 5) })) //res means response
   }
 
-
+    
   // method for Toggle complete
   markComplete =(id)=>{
     this.setState({todos: this.state.todos.map(todo =>{
@@ -50,7 +50,7 @@ class App extends Component {
         todo.completed = !todo.completed
       }
       return todo;
-    })})
+    })});
   }
 
   // method for deleting todo (without using API)
@@ -66,7 +66,7 @@ class App extends Component {
   delTodo =(id)=>{
     axios.delete(`https://jsonplaceholder.typicode.com/todos/${id}`) //for delete we use `` and add an id
       .then(res => this.setState({todos: [...this.state.todos.filter
-      (todo => todo.id !== id)]}) )
+      (todo => todo.id !== id)]}) );
 
   }
 
@@ -84,7 +84,7 @@ class App extends Component {
 // method for add Todo when using api
  addTodo =(title)=> {
   axios.post('https://jsonplaceholder.typicode.com/todos', {
-    title: title,
+    title: title,   
     completed: false
   })
     .then(res => this.setState({todos: [...this.state.todos, res.data]}));
@@ -115,3 +115,4 @@ class App extends Component {
 }
 
 export default App;
+
