@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom'; // This is for using routers to go to other pages
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Navbar from './components/layout/Navbar';
 import Todos from './components/Todos';
 import AddTodo from './components/AddTodo';
 import About from './components/pages/About';
-//import {v4 as uuid} from 'uuid'; //This is used to give unique IDs. uuid won't be needed when using api
-import axios from 'axios'; //This is installed and imported for getting data from json placeholder api
-
+//import {v4 as uuid} from 'uuid';
+import axios from 'axios';
 import './App.css';
 
 
@@ -39,8 +38,10 @@ class App extends Component {
 
   componentDidMount() {
     axios.get('https://jsonplaceholder.typicode.com/todos') // ?_limit=10 can also be used to slice the number ot data
-      .then(res => this.setState({ todos: res.data.slice(0, 5) })) //res means response
-  }
+      .then(res => {
+        this.setState({ todos: res.data.slice(0, 5) })
+      })
+  };
 
     
   // method for Toggle complete
@@ -82,6 +83,7 @@ class App extends Component {
   }
   */
 // method for add Todo when using api
+
  addTodo =(title)=> {
   axios.post('https://jsonplaceholder.typicode.com/todos', {
     title: title,   

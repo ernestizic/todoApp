@@ -1,4 +1,8 @@
 /* This is the css page for the App */
+.App {
+  max-width: 700px;
+  margin: 30px auto;
+}
 
 * {
   box-sizing: border-box;
@@ -27,6 +31,7 @@ a {
   color: #fff;
   padding: 7px 20px;
   cursor: pointer;
+  border-radius: 0;
 }
 
 .btn:hover {

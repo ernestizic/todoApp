@@ -5,7 +5,7 @@ function Navbar(){
     return ( 
         <nav className="navbar navbar-expand-sm bg-dark navbar-dark">
             <div className="container">
-                <Link className="navbar-brand" to="/">Todo</Link>
+                <Link className="navbar-brand" to="/">Todo App</Link>
 
                 <ul className="navbar-nav ml-auto">
                     <li className="nav-item">

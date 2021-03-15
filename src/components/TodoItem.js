@@ -22,7 +22,7 @@ class TodoItem extends Component {
                     <input type="checkbox" onChange={this.props.markComplete.bind(this, id)} /> {' '} 
                     {title}
                     {/* arrow function is used in the button */}
-                    <button onClick={()=> this.props.delTodo(id)} style={btnStyle}>x</button>
+                    <span type="button" onClick={()=> this.props.delTodo(id)} style={btnStyle}>x</span>
                 </p>
             </div>
          );

@@ -22,9 +22,9 @@ class AddTodo extends Component {
           type="text" 
           name="title"
           placeholder="Add Todo..."
-          style={{ flex: "10", padding: "5px" }}
+          style={{ flex: "10", padding: "5px", borderRadius: 0 }}
           value={this.state.title}
-          onChange={this.onChange} //this.onChange can be named anything. Its just a name
+          onChange={this.onChange}
         />
         <input
           type="submit"
